@@ -4,46 +4,113 @@
   src: url(font/Vazir.eot) format("eot"), url(font/Vazir.ttf) format("truetype"),
     url(font/Vazir.woff) format("woff"), url(font/Vazir.woff2) format("woff2");
 }
+
 * {
   font-family: "vazir";
 }
+
 /*==========end-font=========*/
 html,
 body {
   background: rgba(19, 18, 18, 0.842);
 }
+
 /* ============================ */
 .b-radius {
   border-radius: 15px;
 }
-.nav-item a.nav-link:hover {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  border-radius: 2px;
+
+
+.hover-li:hover {
+  transition: all 0.5s;
+  border-radius: 15px;
 }
+
+.hover-li {
+  display: inline-block;
+  position: relative;
+  margin-block: 2px;
+}
+
+.hover-li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  top: 2px;
+  transition: transform 0.25s;
+  color: rgb(172, 172, 172);
+  background: #7700ff;
+  font-size: 30px;
+  transform: scaleX(0);
+  border-radius: 3px;
+}
+
+.hover-li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #7700ff;
+  right: 0;
+  bottom: 2px;
+  transition: transform 0.25s;
+  font-size: 30px;
+  transform: scaleX(0);
+  border-radius: 3px;
+}
+
+.hover-li:hover::after,
+.hover-li:hover::before {
+  transform: scaleX(1);
+}
+
+.background {
+  background: radial-gradient(rgba(119, 0, 255, 0.808), #7700ff8a);
+}
+
 .b-radius-1 {
   border-radius: 30px 5px 15px 30px;
 }
+
 .b-radius-2 {
   border-radius: 50px;
 }
+
 .caption-b-b-img {
-  background-color: rgba(0, 0, 0, 0.541);
+  background: radial-gradient(rgb(119, 0, 255), #0000008c);
   position: absolute;
   top: 35%;
 }
-#animation-img:hover{
-  animation: animation-img 2s alternate;
+
+.hover-box:hover {
+  filter: drop-shadow(2px 4px 10px #7700ff);
 }
+
+#animation-img:hover {
+  animation: animation-img 1.5s alternate;
+}
+
 @keyframes animation-img {
-  20%{
+  20% {
     transform: scale(.90);
+    filter: drop-shadow(2px 4px 10px #7700ff);
   }
-  70%{
+
+  70% {
     transform: scale(1);
+    border-radius: 50%;
+    filter: drop-shadow(2px 4px 10px rgb(119, 0, 255));
+  }
+
+  100% {
+    transform: rotate(45deg);
+    filter: drop-shadow(2px 4px 10px rgb(119, 0, 255));
   }
 }
-.carousel-caption-1{
+
+.carousel-caption-1 {
   position: absolute;
   right: 25%;
   top: 44%;
@@ -57,23 +124,18 @@ body {
   border-radius: 20px;
   color: white;
 }
-.progress-label{
+
+.progress-label {
   width: 25%;
   background-color: white;
   border-radius: 10px;
   padding: 2px;
   text-align: center;
 }
-.caption-h2{
-  width: 40%;
-  background-color: white;
-  border-radius: 10px;
-  padding: 4px;
-  font-size: 30px;
-  text-align: center;
-  margin-right: 30%;
-}
-.caption-2{
+
+
+
+.caption-2 {
   background-color: white;
   border-radius: 10px;
   padding: 4px;
@@ -81,70 +143,90 @@ body {
   text-align: center;
 }
 
-.m-right-35{
+.m-right-35 {
   margin-right: 35%;
 }
-.b-radius{
+
+.b-radius {
   border-radius: 10px;
 }
-.carousel-indicators-1{
-    width: 40px;
-    height: 10px;
-    padding: 1px 0;
-    margin: 0;
-    opacity: .6;
-    -webkit-transition: opacity .2s ease-in-out,width .2s ease-in-out;
-    transition: opacity .2s ease-in-out,width .2s ease-in-out;
+
+.carousel-indicators-1 {
+  width: 40px;
+  height: 10px;
+  padding: 1px 0;
+  margin: 0;
+  opacity: .6;
+  -webkit-transition: opacity .2s ease-in-out, width .2s ease-in-out;
+  transition: opacity .2s ease-in-out, width .2s ease-in-out;
 }
-.filter{
+
+.filter {
   filter: grayscale(2);
 }
-.img-background{
+
+.img-background {
   height: 300px;
   background-image: url(img/8.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.animation-blur{
+
+.animation-blur {
   filter: blur(2px);
 }
-.animation-blur:nth-child(1):hover{
+
+.animation-blur:nth-child(1):hover {
   filter: blur(0px);
 }
-.animation-blur:nth-child(2):hover{
+
+.animation-blur:nth-child(2):hover {
   filter: blur(0px);
 }
-.animation-blur:nth-child(3):hover{
+
+.animation-blur:nth-child(3):hover {
   filter: blur(0px);
 }
-.animation-blur:nth-child(4):hover{
+
+.animation-blur:nth-child(4):hover {
   filter: blur(0px);
 }
-.animation-blur:nth-child(5):hover{
+
+.animation-blur:nth-child(5):hover {
   filter: blur(0px);
 }
-.my-caption:hover h2{
+
+.my-caption:hover h2 {
   background: darkgray;
   border-radius: 10px;
   display: inline;
 }
-.border-white{
+
+.border-white {
   border: 2px solid white;
   border-radius: 10px;
 }
-.font-size-larg{
+
+.font-size-larg {
   font-size: 45px;
 }
-.img-anim:hover{
+
+.img-anim:hover {
   transform: scale(.90);
   transition: .5s;
   background: azure;
   padding: 3px;
   border-radius: 5px;
 }
-#animation-footer:hover{
+
+#animation-footer:hover {
   background: rgba(255, 255, 255, 0.233);
   padding: 3px;
   border-radius: 15px;
   transition: all ease .6s;
+}
+
+.margin-footer {
+  position: relative;
+  top: 3rem;
 }
